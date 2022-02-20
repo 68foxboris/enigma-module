@@ -56,27 +56,27 @@ int get_enigma_platform(struct seq_file *m, void* data)
 
 int get_enigma_imgversion(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONVERSION@\n");
+	seq_printf(m, "@IMAGE_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imgversion=@VISIONVERSION@\n");
+	printk(KERN_INFO "imgversion=@IMAGE_VERSION@\n");
 #endif
 	return 0;
 }
 
 int get_enigma_imgrevision(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONREVISION@\n");
+	seq_printf(m, "@BUILD_VERSION@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imgrevision=@VISIONREVISION@\n");
+	printk(KERN_INFO "imgrevision=@BUILD_VERSION@\n");
 #endif
 	return 0;
 }
 
 int get_enigma_imglanguage(struct seq_file *m, void* data)
 {
-	seq_printf(m, "@VISIONLANGUAGE@\n");
+	seq_printf(m, "@LANGUAGE@\n");
 #ifdef DEBUG
-	printk(KERN_INFO "imglanguage=@VISIONLANGUAGE@\n");
+	printk(KERN_INFO "imglanguage=@LANGUAGE@\n");
 #endif
 	return 0;
 }
@@ -113,15 +113,6 @@ int get_enigma_displaydistro(struct seq_file *m, void* data)
 	seq_printf(m, "@DISPLAY_DISTRO@\n");
 #ifdef DEBUG
 	printk(KERN_INFO "displaydistro=@DISPLAY_DISTRO@\n");
-#endif
-	return 0;
-}
-
-int get_enigma_oe(struct seq_file *m, void* data)
-{
-	seq_printf(m, "@BUILD_VERSION@\n");
-#ifdef DEBUG
-	printk(KERN_INFO "oe=@BUILD_VERSION@\n");
 #endif
 	return 0;
 }
